@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portfolio</title>
+	<link href="https://fonts.googleapis.com/css?family=Bellefair|Pontano+Sans&amp;subset=latin-ext" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<button onclick="up()" id="top" title="Go to top">UP !</button>
+	<div class="banner">
+	</div>
+	<nav class="navigation">
+		<ul>
+			<li>
+				<a href="#end"><i class="fa fa-envelope-o" aria-hidden="true"></i>Contact</a>
+			</li>
+			<li>
+				<a href="game.html"><i class="fa fa-gamepad" aria-hidden="true"></i>Game</a>
+			</li>
+			<li>
+				<a href="#intro"><i class="fa fa-user-o" aria-hidden="true"></i>About Me</a>
+			</li>
+		</ul>
+	</nav>
+	<div id="intro" class="intro">
+		<h1>Hello,my name is Andzej</h1>
+		<h2>I can create for you amazing frontend website !</h2>
+		<p>More about myself I will tell you at first meeting.</p>
+	</div>
+	<section class="skills">
+		<h2>My skills</h2>
+		<div class="html">
+			<p>90%</p>
+			<img src="images/html.png">
+		</div>
+		<div class="css">
+			<p>80%</p>
+			<img src="images/css.png">
+		</div>
+		<div class="js">
+			<p>40%</p>
+			<img src="images/js.png">
+		</div>
+		<div class="jquery">
+			<p>30%</p>
+			<img src="images/jquery.png">
+		</div>
+	</section>
+	<div class="slideshow-container">
+
+		<div class="mySlides fade">
+			<img src="images/slide1.jpg" style="width:100%">
+		</div>
+		<div class="mySlides fade">
+			<img src="images/slide2.png" style="width:100%">
+		</div>
+		<div class="mySlides fade">
+			<img src="images/slide3.jpg" style="width:100%">
+		</div>
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	</div>
+	<br>
+	<div style="text-align:center">
+		<span class="dot" onclick="currentSlide(1)"></span> 
+		<span class="dot" onclick="currentSlide(2)"></span> 
+		<span class="dot" onclick="currentSlide(3)"></span> 
+	</div>
+
+	<script>
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+			showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+			showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+			var i;
+			var slides = document.getElementsByClassName("mySlides");
+			var dots = document.getElementsByClassName("dot");
+			if (n > slides.length) {slideIndex = 1}    
+				if (n < 1) {slideIndex = slides.length}
+					for (i = 0; i < slides.length; i++) {
+						slides[i].style.display = "none";  
+					}
+					for (i = 0; i < dots.length; i++) {
+						dots[i].className = dots[i].className.replace(" active", "");
+					}
+					slides[slideIndex-1].style.display = "block";  
+					dots[slideIndex-1].className += " active";
+				};
+
+
+
+
+				window.onscroll = function() {scrollFunction()};
+
+				function scrollFunction() {
+					if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+						document.getElementById("top").style.display = "block";
+					} else {
+						document.getElementById("top").style.display = "none";
+					}
+				}
+
+				function up() {
+					document.body.scrollTop = 0;
+					document.documentElement.scrollTop = 0;
+				}
+
+			</script>
+			<form id="end" class="contacts" action="email_form.php" method="post">
+				<h1>You can write me a message</h1>
+				First Name:<br>
+				<input type="text" name="first_name"><br>
+				Last Name:<br>  
+				<input type="text" name="last_name"><br>
+				Email:<br>
+				<input type="text" name="email"><br>
+				Message:<br><textarea rows="5" name="message" cols="30"></textarea><br>
+				<input type="submit" name="submit" value="Send">
+			</form>
+		</body>
+		</html>

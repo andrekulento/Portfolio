@@ -1,0 +1,250 @@
+body {
+	max-width: 70%;
+	margin: auto;
+	background-image: url('images/bg.jpg');
+}
+
+.clickers {
+	text-align: center;
+	margin-top: 200px;
+	vertical-align: middle;
+	margin-left: 400px;
+
+}
+
+.clickers button {
+	float: left;
+	font-size: 20px;
+	background-color: white;
+	text-align: center;
+	padding-right: 13px;
+	padding-left: 13px;
+	padding-bottom: 8px;
+	padding-top: 8px;
+	border-radius: 10px;
+	margin: 10px;
+	font-family: Bellefair;
+}
+
+.clickers h1 {
+	font-size: 35px;
+	margin-bottom: 15px;
+	margin-right: 450px;
+	color: white;
+	font-family: Bellefair;
+}
+
+.description p {
+	color: white;
+	font-size: 22px;
+	text-align: center;
+	font-family: Bellefair;
+}
+.description {
+	float: right;
+	margin-left: 480px;
+	margin-top: -79px;
+
+}
+
+#message  {
+	color: orange;
+	float: left;
+	text-align: center;
+	margin-top: -250px;
+	margin-left: 80px;
+	font-size: 25px;
+}
+
+.rand_number {
+	float: left;
+	margin-top: -190px;
+	margin-left: 150px;
+	font-size: 30px;
+	width: 105px;
+	height: 220px;
+	word-wrap: break-word;
+	border: 1.5px solid grey;
+	border-radius: 10px;
+	text-align: center;
+	color: white;
+	font-family: Indie Flower;
+	background-color: black;
+}
+
+.lucky_number {
+	color: white;
+	float: left;
+	margin-top: 100px;
+	margin-left: -140px;
+	font-family: Indie Flower;
+}
+
+.lucky_number p {
+	margin-top: -25px;
+	font-size: 30px;
+}
+
+.lucky_number h3 {
+	font-size: 30px;
+}
+
+.game_score {
+	float: left;
+	color: white;
+	font-family: Indie Flower;
+	margin-top: 205px;
+	margin-left: -210px;
+}
+
+.game_score h3 {
+	font-size: 30px;
+}
+
+.game_score p {
+	float: right;
+	margin-top: -79px;
+	margin-right: -57px;
+	font-size: 35px;
+}
+.nr_table {
+	color: white;
+	float: left;
+	margin-left: -650px;
+	margin-top: -350px;
+}
+
+.nr_table div {
+	border: solid grey 1px;
+	background-color: orange;
+	font-size: 40px;
+	text-align: center;
+	padding: 5px;
+}
+
+.back {
+	text-align: center;
+	margin-top: 400px;
+	float: right;
+}
+
+.back a {
+	color: white;
+	font-size: 35px;
+	font-family: Bellefair;
+	text-decoration: none;
+	display: block;
+	transition: all 0.7s;
+	padding: 12px;
+}
+
+.back li:hover a {
+    color: skyblue;
+    transform: translate(0, 10px);
+}
+
+@media only screen and (max-width: 768px) and (min-width: 480px) {
+	.description {
+		margin-top: -950px;
+		text-align: center;
+		margin-right: 120px;
+	}
+
+	.clickers {
+		margin-top: 630px;
+		margin-left: -50px;
+	}
+
+	.clickers button {
+        float: none;
+        display: block;
+	}
+
+	#message {
+		margin-top: -300px;
+		margin-left: 150px;
+	}
+
+	.rand_number {
+		margin-top: -235px;
+		margin-left: 180px;
+	}
+    
+    .lucky_number {
+    	margin-left: 150px;
+    	margin-top: 50px;
+    }
+
+    .game_score {
+    	margin-top: 150px;
+    }
+
+    .back {
+    	margin-top: 100px;
+    }
+}
+
+@media only screen and (max-width: 1191px) and (min-width: 768px) {
+	.clickers {
+		margin-left: -110px;
+	}
+}
+
+@media only screen and (max-width: 1046px) and (min-width: 943px) {
+	.rand_number {
+		margin-top: -110px;
+	}
+}
+
+@media only screen and (max-width: 1046px) and (min-width: 853px) {
+	#message {
+		margin-top: -370px;
+	}
+}
+
+@media only screen and (max-width: 1191px) and (min-width: 1046px) {
+	.rand_number {
+		margin-top: -110px;
+	}
+
+	#message {
+		margin-top: -285px;
+	}
+}
+
+@media only screen and (max-width: 1330px) and (min-width: 1191px) {
+	.description {
+		margin-right: -150px;
+	}
+}
+
+@media only screen and (max-width: 1275px) and (min-width: 1191px) {
+	#message {
+		margin-top: -380px;
+	}
+
+	.rand_number {
+		margin-top: -340px;
+	}
+
+	.lucky_number {
+		margin-left: 120px;
+		margin-top: -120px;
+	}
+
+	.game_score {
+        margin-left: 150px;
+        margin-top: -50px;
+	}
+
+	.back {
+		margin-top: 150px;
+	}
+
+	.nr_table {
+		margin-top: -500px;
+	}
+}
+
+
+

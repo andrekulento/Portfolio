@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>game</title>
+	<link href="https://fonts.googleapis.com/css?family=Bellefair|Indie+Flower&amp;subset=latin-ext" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="game_style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<div class="clickers">
+		<h1>Lucky numbers</h1>
+		<button id="randomNumber">Play</button>
+		<button id="ticket">Random</button>
+		<button id="check">Check</button>
+		<button id="new_game">New game</button>
+		<div class="description">
+			<p>First click "Play" to get "Lucky numbers",after press "Random" 5 times to get your ticket numbers</p>
+			<p>For every similar "Lucky number" and number on your ticket you get 10 points. Score 150 points and win. Good Luck!</p>
+		</div> 
+		<p id="message"></p>
+		<div class="rand_number" id="numbers">None</div>
+		<div class="lucky_number">
+			<h3>YOUR TICKET:</h3>
+			<p id="lucky_n">None</p>
+		</div>	
+		<div class="game_score">
+			<h3>SCORE :</h3>
+			<p id="score">0</p>
+		</div>
+		<div class="nr_table">
+			<div id="0">0</div>	
+			<div id="1">1</div>	
+			<div id="2">2</div>	
+			<div id="3">3</div>	
+			<div id="4">4</div>	
+			<div id="5">5</div>	     
+			<div id="6">6</div>	
+			<div id="7">7</div>	
+			<div id="8">8</div>	
+			<div id="9">9</div>
+		</div>	
+	</div>
+	<nav class="back">
+		<ul>
+			<li>
+				<a href="index.html"><< Back</a>
+			</li>
+		</ul>
+	</nav>
+	<script>
+		function clear_table() { 
+			for (var i = 0; i <= 9; i++) {
+				document.getElementById(i).style.backgroundColor = "orange";
+			};
+		  };	
+
+			var rand_nr = [];
+			$(document).ready(function(){
+				$("#randomNumber").click(function(){
+					for(var x = 0; x < 25; x++) {
+						var skaicius = Math.floor(Math.random() * 10);
+						rand_nr.push(skaicius);
+					};
+
+					if(rand_nr.length = 25) {
+						$("#message").text("Press 'Random' 5 times");
+					};
+
+					$("#numbers").text(rand_nr);
+				});
+			});
+
+
+			var ticket = [];
+			$(document).ready(function(){
+				$("#ticket").click(function(){
+					for (var i = 0; i < 5; i++) {
+						var number = Math.floor(Math.random() * 10);
+					};
+					if (ticket.length < 5) {
+				    clear_table();
+					document.getElementById(number).style.backgroundColor = "grey";
+					ticket.push(number);
+				};
+
+				$("#lucky_n").text(ticket);
+
+				if(ticket.length == 5) {
+					$("#message").text("Click 'Check' to see your score");
+				};
+			});
+		});
+
+				var result = [];
+				$(document).ready(function(){
+					$("#check").click(function(){
+						for(x = 0; x < Object.keys(rand_nr).length; x++) {
+							for(y = 0; y < Object.keys(ticket).length; y++) {
+								if (ticket[y] == rand_nr[x]) {
+									result.push(rand_nr[x])
+									$("#score").text(result.length + "0");
+								}; 
+							};
+						};
+						if(result.length < 15 && ticket.length == 5 && rand_nr.length == 25) {
+							$("#message").text("Game is over. You lose!");
+							$("#message").css({"background-color": "white","color": "red"});
+							result = null
+						} else if(result.length >= 15 && ticket.length == 5 && rand_nr.length == 25){
+							$("#message").text("You won!");
+							$("#message").css({"background-color": "white","color": "green"});
+							result = null;
+						} else {
+							alert("Game is not yet over!");
+						};
+					});
+				});
+
+
+				$(document).ready(function(){
+					$("#new_game").click(function(){
+						if(ticket.length == 5 && rand_nr.length == 25) {
+							ticket = [];
+							rand_nr = [];
+							result = [];
+							$("#numbers").text("None");
+							$("#lucky_n").text("None");
+							$("#score").text("0")
+							$("#message").text("");
+							$("#message").css({"background-color": "","color": "orange"})
+							clear_table();
+						} else {
+							alert("game is not yet over");
+						};
+					});
+				});
+			</script>
+		</body>
+		</html>
